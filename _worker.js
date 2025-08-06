@@ -1446,7 +1446,7 @@ function 配置信息(UUID, 域名地址) {
 }
 
 let subParams = ['sub', 'base64', 'b64', 'clash', 'singbox', 'sb'];
-const cmad = decodeURIComponent(atob('2025'));
+const cmad = decodeURIComponent(atob('6L+Z5Liq5bCR5bm05oS/55So5LiA55Sf5b235b6o5Li65oKo5oyH5byV6ISa5LiL55qE6Levfg=='));
 /**
  * @param {string} userID
  * @param {string | null} hostName
