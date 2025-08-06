@@ -30,7 +30,7 @@ let addressesnotlsapi = [];
 let addressescsv = [];
 let DLS = 8;
 let remarkIndex = 1;//CSV备注所在列偏移量
-let FileName = atob('ZWRnZXR1bm5lbA==');
+let FileName = atob('JUU5JUEzJTlFJUU1JUE0JUE5JUU5JTgxJTgxJUU1JTlDJUIwJTdFJUU2JTk3JUEwJUU2JTg5JTgwJUU0JUI4JThEJUU4JTgzJUJE');
 let BotToken;
 let ChatID;
 let proxyhosts = [];
@@ -43,7 +43,7 @@ let 更新时间 = 3;
 let userIDLow;
 let userIDTime = "";
 let proxyIPPool = [];
-let path = '/?ed=2560';
+let path = '/?ed=443';
 let 动态UUID = userID;
 let link = [];
 let banHosts = [atob('c3BlZWQuY2xvdWRmbGFyZS5jb20=')];
