@@ -1615,57 +1615,7 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
         /*else 订阅器 += `<br>SUBAPI（订阅转换后端）: <a href='${subProtocol}://${subConverter}/version' target="_blank" rel="noopener noreferrer">${subProtocol}://${subConverter}</a><br>SUBCONFIG（订阅转换配置文件）: <a href='${subConfig}' target="_blank" rel="noopener noreferrer">${subConfig}</a>`;*/
         const 动态UUID信息 = (uuid != userID) ? `TOKEN: ${uuid}<br>UUIDNow: ${userID}<br>UUIDLow: ${userIDLow}<br>${userIDTime}TIME（动态UUID有效时间）: ${有效时间} 天<br>UPTIME（动态UUID更新时间）: ${更新时间} 时（北京时间）<br><br>` : `${userIDTime}`;
         const 节点配置页 = `
-            /*################################################################<br>
-            Subscribe / sub 订阅地址, 点击链接自动 <strong>复制订阅链接</strong> 并 <strong>生成订阅二维码</strong> <br>
-            ---------------------------------------------------------------<br>
-            自适应订阅地址:<br>
-            <a href="javascript:void(0)" onclick="copyToClipboard('https://${proxyhost}${hostName}/${uuid}?sub','qrcode_0')" style="color:blue;text-decoration:underline;cursor:pointer;">https://${proxyhost}${hostName}/${uuid}</a><br>
-            <div id="qrcode_0" style="margin: 10px 10px 10px 10px;"></div>
-            Base64订阅地址:<br>
-            <a href="javascript:void(0)" onclick="copyToClipboard('https://${proxyhost}${hostName}/${uuid}?b64','qrcode_1')" style="color:blue;text-decoration:underline;cursor:pointer;">https://${proxyhost}${hostName}/${uuid}?b64</a><br>
-            <div id="qrcode_1" style="margin: 10px 10px 10px 10px;"></div>
-            clash订阅地址:<br>
-            <a href="javascript:void(0)" onclick="copyToClipboard('https://${proxyhost}${hostName}/${uuid}?clash','qrcode_2')" style="color:blue;text-decoration:underline;cursor:pointer;">https://${proxyhost}${hostName}/${uuid}?clash</a><br>
-            <div id="qrcode_2" style="margin: 10px 10px 10px 10px;"></div>
-            singbox订阅地址:<br>
-            <a href="javascript:void(0)" onclick="copyToClipboard('https://${proxyhost}${hostName}/${uuid}?sb','qrcode_3')" style="color:blue;text-decoration:underline;cursor:pointer;">https://${proxyhost}${hostName}/${uuid}?sb</a><br>
-            <div id="qrcode_3" style="margin: 10px 10px 10px 10px;"></div>
-            loon订阅地址:<br>
-            <a href="javascript:void(0)" onclick="copyToClipboard('https://${proxyhost}${hostName}/${uuid}?loon','qrcode_5')" style="color:blue;text-decoration:underline;cursor:pointer;">https://${proxyhost}${hostName}/${uuid}?loon</a><br>
             
-            <script>
-            function copyToClipboard(text, qrcode) {
-                navigator.clipboard.writeText(text).then(() => {
-                    alert('已复制到剪贴板');
-                }).catch(err => {
-                    console.error('复制失败:', err);
-                });
-                const qrcodeDiv = document.getElementById(qrcode);
-                qrcodeDiv.innerHTML = '';
-                new QRCode(qrcodeDiv, {
-                    text: text,
-                    width: 220, // 调整宽度
-                    height: 220, // 调整高度
-                    colorDark: "#000000", // 二维码颜色
-                    colorLight: "#ffffff", // 背景颜色
-                    correctLevel: QRCode.CorrectLevel.Q, // 设置纠错级别
-                    scale: 1 // 调整像素颗粒度
-                });
-            }
-
-            function toggleNotice() {
-                const noticeContent = document.getElementById('noticeContent');
-                const noticeToggle = document.getElementById('noticeToggle');
-                if (noticeContent.style.display === 'none') {
-                    noticeContent.style.display = 'block';
-                    noticeToggle.textContent = '实用订阅技巧∧';
-                } else {
-                    noticeContent.style.display = 'none'; 
-                    noticeToggle.textContent = '实用订阅技巧∨';
-                }
-            }
-            </script>
-            ---------------------------------------------------------------<br>*/
             ################################################################<br>
             ${FileName} 配置信息<br>
             ---------------------------------------------------------------<br>
@@ -4560,6 +4510,7 @@ async function nginx() {
 	`
     return text;
 }
+
 
 
 
