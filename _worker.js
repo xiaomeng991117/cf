@@ -1592,15 +1592,15 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
 
         let 订阅器 = '<br>';
         if (sub) {
-            if (enableSocks) 订阅器 += `CFCDN（访问方式）: ${enableHttp ? "HTTP" : "Socks5"}<br>&nbsp;&nbsp;${newSocks5s.join('<br>&nbsp;&nbsp;')}<br>${socks5List}`;
-            else if (proxyIP && proxyIP != '') 订阅器 += `CFCDN（访问方式）: ProxyIP<br>&nbsp;&nbsp;${proxyIPs.join('<br>&nbsp;&nbsp;')}<br>`;
-            else if (RproxyIP == 'true') 订阅器 += `CFCDN（访问方式）: 自动获取ProxyIP<br>`;
-            else 订阅器 += `CFCDN（访问方式）: 内置兜底, 您也可以设置 proxyIP/PROXYIP 。<br>`
+            if (enableSocks) 订阅器 += `（访问方式）: ${enableHttp ? "HTTP" : "Socks5"}<br>&nbsp;&nbsp;${newSocks5s.join('<br>&nbsp;&nbsp;')}<br>${socks5List}`;
+            else if (proxyIP && proxyIP != '') 订阅器 += `（访问方式）: ProxyIP<br>&nbsp;&nbsp;${proxyIPs.join('<br>&nbsp;&nbsp;')}<br>`;
+            else if (RproxyIP == 'true') 订阅器 += `（访问方式）: 自动获取ProxyIP<br>`;
+            else 订阅器 += `（访问方式）: 内置兜底, 您也可以设置 proxyIP/PROXYIP 。<br>`
             订阅器 += `<br>SUB（优选订阅生成器）: ${sub}`;
         } else {
-            if (enableSocks) 订阅器 += `CFCDN（访问方式）: ${enableHttp ? "HTTP" : "Socks5"}<br>&nbsp;&nbsp;${newSocks5s.join('<br>&nbsp;&nbsp;')}<br>${socks5List}`;
-            else if (proxyIP && proxyIP != '') 订阅器 += `CFCDN（访问方式）: ProxyIP<br>&nbsp;&nbsp;${proxyIPs.join('<br>&nbsp;&nbsp;')}<br>`;
-            else 订阅器 += `CFCDN（访问方式）: 内置兜底, 您也可以设置 proxyIP/PROXYIP 。<br>`;
+            if (enableSocks) 订阅器 += `（访问方式）: ${enableHttp ? "HTTP" : "Socks5"}<br>&nbsp;&nbsp;${newSocks5s.join('<br>&nbsp;&nbsp;')}<br>${socks5List}`;
+            else if (proxyIP && proxyIP != '') 订阅器 += `（访问方式）: ProxyIP<br>&nbsp;&nbsp;${proxyIPs.join('<br>&nbsp;&nbsp;')}<br>`;
+            else 订阅器 += `（访问方式）: 内置兜底, 您也可以设置 proxyIP/PROXYIP 。<br>`;
             let 判断是否绑定KV空间 = '';
             /*if (env.KV) 判断是否绑定KV空间 = ` [<a href='${_url.pathname}/edit'>编辑优选列表</a>]  [<a href='${_url.pathname}/bestip'>在线优选IP</a>]`;*/
             订阅器 += `<br>您的订阅内容由 内置 addresses/ADD* 参数变量提供${判断是否绑定KV空间}<br>`;
@@ -4510,6 +4510,7 @@ async function nginx() {
 	`
     return text;
 }
+
 
 
 
