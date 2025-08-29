@@ -36,8 +36,8 @@ let ChatID;
 let proxyhosts = [];
 let proxyhostsURL = '';
 let RproxyIP = 'false';
-const httpPorts = ["8080", "8880", "2052", "2082", "2086", "2095"];
-let httpsPorts = ["2053", "2083", "2087", "2096", "8443"];
+const httpPorts = ["80", "8080", "8880", "2052", "2082", "2086", "2095"];
+let httpsPorts = ["443", "2053", "2083", "2087", "2096", "8443"];
 let 有效时间 = 365;
 let 更新时间 = 3;
 let userIDLow;
@@ -1632,26 +1632,7 @@ async function 生成配置信息(userID, hostName, sub, UA, RproxyIP, _url, fak
             <div id="qrcode_3" style="margin: 10px 10px 10px 10px;"></div>
             loon订阅地址:<br>
             <a href="javascript:void(0)" onclick="copyToClipboard('https://${proxyhost}${hostName}/${uuid}?loon','qrcode_5')" style="color:blue;text-decoration:underline;cursor:pointer;">https://${proxyhost}${hostName}/${uuid}?loon</a><br>
-            <div id="qrcode_5" style="margin: 10px 10px 10px 10px;"></div>
-            <strong><a href="javascript:void(0);" id="noticeToggle" onclick="toggleNotice()">实用订阅技巧∨</a></strong><br>
-                <div id="noticeContent" class="notice-content" style="display: none;">
-                    <strong>1.</strong> 如您使用的是 PassWall、PassWall2 路由插件，订阅编辑的 <strong>用户代理(User-Agent)</strong> 设置为 <strong>PassWall</strong> 即可；<br>
-                    <br>
-                    <strong>2.</strong> 如您使用的是 SSR+ 路由插件，推荐使用 <strong>Base64订阅地址</strong> 进行订阅；<br>
-                    <br>
-                    <strong>3.</strong> 快速切换 <a href='${atob('aHR0cHM6Ly9naXRodWIuY29tL2NtbGl1L1dvcmtlclZsZXNzMnN1Yg==')}'>优选订阅生成器</a> 至：sub.google.com，您可将"?sub=sub.google.com"参数添加到链接末尾，例如：<br>
-                    &nbsp;&nbsp;https://${proxyhost}${hostName}/${uuid}<strong>?sub=sub.google.com</strong><br>
-                    <br>
-                    <strong>4.</strong> 快速更换 PROXYIP 至：proxyip.cmliussss.net:443，您可将"?proxyip=proxyip.cmliussss.net:443"参数添加到链接末尾，例如：<br>
-                    &nbsp;&nbsp; https://${proxyhost}${hostName}/${uuid}<strong>?proxyip=proxyip.cmliussss.net:443</strong><br>
-                    <br>
-                    <strong>5.</strong> 快速更换 SOCKS5 至：user:password@127.0.0.1:1080，您可将"?socks5=user:password@127.0.0.1:1080"参数添加到链接末尾，例如：<br>
-                    &nbsp;&nbsp;https://${proxyhost}${hostName}/${uuid}<strong>?socks5=user:password@127.0.0.1:1080</strong><br>
-                    <br>
-                    <strong>6.</strong> 如需指定多个参数则需要使用'&'做间隔，例如：<br>
-                    &nbsp;&nbsp;https://${proxyhost}${hostName}/${uuid}?sub=sub.google.com<strong>&</strong>proxyip=proxyip.cmliussss.net<br>
-                </div>
-            <script src="https://cdn.jsdelivr.net/npm/@keeex/qrcodejs-kx@1.0.2/qrcode.min.js"></script>
+            
             <script>
             function copyToClipboard(text, qrcode) {
                 navigator.clipboard.writeText(text).then(() => {
@@ -4579,4 +4560,5 @@ async function nginx() {
 	`
     return text;
 }
+
 
